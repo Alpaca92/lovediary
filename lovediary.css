@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+}
+
+aside {
+  float: left;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background: none;
+  background-color: #111;
+  color: #E94B3CFF;
+  /* border-color: #ffffff;
+  border-style: solid; */
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 2.3vw;
+}
+
+section img {
+  width: 50%;
+  /* height: 281px; */
+  /* object-fit: cover; */
+}
+
+section h1 {
+  font-weight: 900;
+  background-color: #DCDCDC;
+  padding: 1vw;
+}
+
+section p {
+  margin: 0.5vw;
+}
+
+.logo {
+  width: 13%;
+  position: fixed;
+  padding-right: 0;
+  background-color: transparent;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transition: 0.5s; /* navbar가 열고 닫히는 시간 */
+}
+
+.image_container {
+  position: relative;
+}
+
+.main {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color:#FFFFF0;
+}
+
+.image_container:hover .overlay {
+  opacity: 70%;
+}
+
+.text {
+  color: 000000;
+  font-size: 5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'Nanum Pen Script', cursive;
+  transform: translate(-50%, -50%);
+}
+
+.tab_menu_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab_menu_btn {
+  width: 15vw;
+  height: 5vw;
+  transition: 0.3s all;
+}
+
+.tab_menu_btn.on {
+  font-weight: 700;
+  background-color: #E94B3CFF;
+  color: #2D2926FF;
+}
+
+.tab_menu_btn:hover {
+  color: #ffffff;
+}
+
+.tab_box {
+  display: none;
+  font-family: 'Binggrae';
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.tab_box.on {
+  display: block;
+  text-align: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0; /* 처음에 안나타나게 하려고 0을 줌 */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0; /* navbar를 오른쪽으로 하고싶으면 left -> right로*/
+  background-color: #111;
+  overflow-x: hidden; /* navbar의 내용들이 처음에 안나타나게 하기 위해서 */
+  transition: 0.5s; /* navbar가 열고 닫히는 시간 */
+  padding-top: 6vw; /* x랑 list들이 겹치지 않기 위해서 */
+}
+
+.sidenav a {
+  padding: 0.8vw 0.8vw 0.8vw 3.2vw;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  transition: 0.3s; /* 글자색이 바뀌는 시간 */
+}
+
+.sidenav .closebtn {
+  position: absolute; /* navbar안에서 fixed 되게 하기 위해서 absolute; */
+  top: 0;
+  right: 1vw;
+  font-size: 3.6vw;
+  /* margin-left: 50px; --> 왜 넣었는지 이유 찾기 */
+}
+
+.openicon {
+  position: fixed;
+  top: 0;
+  right: 1vw;
+  color: #000000;
+  z-index: 3;
+  font-size: 3vw;
+}
+/*
+.smalltext {
+    font-size: 16px;
+    font-family: 'Caveat', cursive;
+} */
+
+#clockdiv {
+    text-align: center;
+}
+
+#clockdiv > span {
+    font-family: 'KyoboHand';
+    font-weight: 100;
+    font-size: 5vw;
+    padding: 1vw;
+    color: #FF0000;
+}
+
+#clockdiv > p {
+    font-family: 'Cafe24Shiningstar';
+    font-size: 3vw;
+    padding: 1vw;
+    padding-top: 2vw;
+}
+#clockdiv > p > span{
+    color: #FF0000;
+    padding: 0.5vw;
+}
+
+#main {
+  transition: margin-left .5s; /* #main의 margin-left가 function에 의해 변하는 시간 */
+  padding: 1.6vw;
+}
+
+/* 높이가 450px 이하인 device들에 대해 padding-top과 font-size 조절 */
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Shiningstar';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Shiningstar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
